@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const intl = useIntl();
   const defaultMessage = intl.formatMessage({
     id: 'app.copyright.produced',
-    defaultMessage: '蚂蚁集团体验技术部出品',
+    defaultMessage: 'WeHelp',
   });
 
   const currentYear = new Date().getFullYear();
@@ -16,20 +16,20 @@ const Footer: React.FC = () => {
       copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
-          key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
+          key: 'We Help',
+          title: 'We Help',
           href: 'https://pro.ant.design',
           blankTarget: true,
         },
         {
-          key: 'github',
+          key: 'We Help',
           title: <GithubOutlined />,
           href: 'https://github.com/ant-design/ant-design-pro',
           blankTarget: true,
         },
         {
-          key: 'Ant Design',
-          title: 'Ant Design',
+          key: 'We Help',
+          title: 'We Help',
           href: 'https://ant.design',
           blankTarget: true,
         },
