@@ -2,10 +2,78 @@
 /* eslint-disable */
 
 declare namespace API {
+  export type tabKeyType = 'articles' | 'applications' | 'projects';
+  export interface TagType {
+    key: string;
+    label: string;
+  }
+  
+  export type GeographicItemType = {
+    label: string;
+    key: string;
+  };
+
+  export type GeographicType = {
+    province: GeographicItemType;
+    city: GeographicItemType;
+  };
+  
+  export type NoticeType = {
+    id: string;
+    title: string;
+    logo: string;
+    description: string;
+    updatedAt: string;
+    member: string;
+    href: string;
+    memberLink: string;
+  };
+
+  export type Member = {
+    avatar: string;
+    name: string;
+    id: string;
+  };
+  
+  export type ListItemDataType = {
+    id: string;
+    owner: string;
+    title: string;
+    avatar: string;
+    cover: string;
+    status: 'normal' | 'exception' | 'active' | 'success';
+    percent: number;
+    logo: string;
+    href: string;
+    body?: any;
+    updatedAt: number;
+    createdAt: number;
+    subDescription: string;
+    description: string;
+    activeUser: number;
+    newUser: number;
+    star: number;
+    like: number;
+    message: number;
+    content: string;
+    members: Member[];
+  };
+
+  export type CurrentUserInfo = {
+    username : string;
+    userid : string;
+    access : string;
+    password: string;
+  };
+  
   type CurrentUser = {
+    // basic info
+    username?: string;
+    userid?: string;
+    access?: string;
+
     name?: string;
     avatar?: string;
-    userid?: string;
     email?: string;
     signature?: string;
     title?: string;
@@ -14,10 +82,9 @@ declare namespace API {
     notifyCount?: number;
     unreadCount?: number;
     country?: string;
-    access?: string;
     geographic?: {
-      province?: { label?: string; key?: string };
-      city?: { label?: string; key?: string };
+      province?: GeographicItemType;
+      city?: GeographicItemType;
     };
     address?: string;
     phone?: string;
@@ -84,7 +151,7 @@ declare namespace API {
     success?: boolean;
   };
 
-  type NoticeIconItemType = 'notification' | 'message' | 'event';
+  type  NoticeIconItemType = 'notification' | 'message' | 'event';
 
   type NoticeIconItem = {
     id?: string;

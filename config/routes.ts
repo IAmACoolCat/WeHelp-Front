@@ -15,13 +15,13 @@
   },
   {
     path: '/welcome',
-    name: 'welcome',
+    name: '欢迎',
     icon: 'smile',
     component: './Welcome',
   },
   {
     path: '/admin',
-    name: 'admin',
+    name: '管理员',
     icon: 'crown',
     access: 'canAdmin',
     routes: [
@@ -41,6 +41,29 @@
     icon: 'table',
     path: '/list',
     component: './TableList',
+  },
+  {
+    name: '系统管理',
+    icon: 'user',
+    path: '/account',
+    routes: [
+      {
+        path: '/account',
+        redirect: '/account/center',
+      },
+      {
+        name: 'center',
+        icon: 'smile',
+        path: '/account/center',
+        component: './account/center',
+      },
+      {
+        name: 'settings',
+        icon: 'smile',
+        path: '/account/settings',
+        component: './account/settings',
+      },
+    ],
   },
   {
     path: '/',

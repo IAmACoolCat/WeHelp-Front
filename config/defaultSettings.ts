@@ -4,6 +4,9 @@ const Settings: LayoutSettings & {
   pwa?: boolean;
   logo?: string;
 } = {
+  menu: {
+    locale: false,    
+  },
   navTheme: 'light',
   // 拂晓蓝
   primaryColor: '#1890ff',
@@ -12,7 +15,7 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'We Help',
   pwa: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
