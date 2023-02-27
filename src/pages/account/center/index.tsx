@@ -11,9 +11,9 @@ import Applications from './components/Applications';
 import { queryCurrent } from './service';
 import styles from './Center.less';
 
-type CurrentUser = API.CurrentUser;
-type TagType = API.TagType;
-type tabKeyType = API.tabKeyType;
+type CurrentUser = WeHelp.CurrentUser;
+type TagType = WeHelp.TagType;
+type tabKeyType = WeHelp.tabKeyType;
 
 const operationTabList = [
   {

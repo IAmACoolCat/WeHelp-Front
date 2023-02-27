@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import type { Request, Response } from 'express';
-type ListItemDataType = API.ListItemDataType;
+type ListItemDataType = WeHelp.ListItemDataType;
 
 const titles = [
   'Alipay',

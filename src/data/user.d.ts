@@ -1,7 +1,7 @@
 // @ts-ignore
 /* eslint-disable */
 
-declare namespace API {
+declare namespace WeHelp {
   export type tabKeyType = 'articles' | 'applications' | 'projects';
   export interface TagType {
     key: string;

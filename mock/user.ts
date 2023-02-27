@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { FakeUsersInfo, FakeUsersDetail } from './fakeUsers';
 
-type UserInfo = API.CurrentUserInfo;
-type UserDetail = API.CurrentUser;
+type UserInfo = WeHelp.CurrentUserInfo;
+type UserDetail = WeHelp.CurrentUser;
 
 const CheckUser = (username : string, password : string) : UserInfo|undefined => {
   for (let u of FakeUsersInfo) {
