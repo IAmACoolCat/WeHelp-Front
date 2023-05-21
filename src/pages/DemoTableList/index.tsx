@@ -17,7 +17,7 @@ import {
 } from 'antd';
 
 import { PageContainer } from '@ant-design/pro-layout';
-import { useRequest } from 'umi';
+import { useModel, useRequest } from 'umi';
 import moment from 'moment';
 import OperationModal from './components/OperationModal';
 import {
@@ -66,6 +66,7 @@ const ListContent = ({
 );
 
 export const BasicList: FC = () => {
+  const { initialState } = useModel('@@initialState');
   const [done, setDone] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(false);
   const [current, setCurrent] = useState<Partial<BasicListItemDataType> | undefined>(undefined);
@@ -80,6 +81,7 @@ export const BasicList: FC = () => {
   } = useRequest(() => {
     return queryFakeList({
       count: 8,
+      username: initialState?.currentUser?.username
     });
   });
 
@@ -92,6 +94,7 @@ export const BasicList: FC = () => {
         return updateFakeList(params);
       }
       if (method === 'filter') {
+        params['username'] = initialState.currentUser.username;
         return queryFakeList(params);
       }
       return addFakeList(params);

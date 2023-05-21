@@ -4,6 +4,7 @@ import type { BasicListItemDataType } from 'mock/data';
 type ParamsType = {
   count?: number;
   status?: string;
+  username?: string;
 } & Partial<BasicListItemDataType>;
 
 export async function queryFakeList(
