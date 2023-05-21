@@ -20,6 +20,12 @@
     component: './Welcome',
   },
   {
+    path: '/demotable',
+    name: '任务列表',
+    icon: 'TableOutlined',
+    component: './DemoTableList',
+  },
+  {
     path: '/admin',
     name: '管理员',
     icon: 'crown',
@@ -52,13 +58,13 @@
         redirect: '/account/center',
       },
       {
-        name: 'center',
+        name: '个人中心',
         icon: 'smile',
         path: '/account/center',
         component: './account/center',
       },
       {
-        name: 'settings',
+        name: '系统设置',
         icon: 'smile',
         path: '/account/settings',
         component: './account/settings',

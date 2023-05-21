@@ -15,7 +15,13 @@ const mock_users_info = [
     userid: '2',
     access: 'user',
     password: '123456',
-  }
+  },
+  {
+    username: 'xiaoxiao',
+    userid: '3',
+    access: 'user',
+    password: '123456',
+  },
 ];
 
 /**
@@ -48,7 +54,7 @@ const mock_users_detail = [
     ],
     notifyCount: 12,
     unreadCount: 11,
-    country: 'China', 
+    country: 'China',
     geographic: {
       province: {
         label: '上海',
@@ -60,7 +66,7 @@ const mock_users_detail = [
       },
     },
     address: '文馨雅苑 77 号',
-    phone: '021-80881240', 
+    phone: '021-80881240',
   },
   {
     username: 'meixi',
@@ -100,10 +106,46 @@ const mock_users_detail = [
     },
     address: '日不落大道 77 号',
     phone: '021-80881240',
-  }
+  },
+  {
+    username: 'xiaoxiao',
+    name: '付小小',
+    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+    userid: '3',
+    email: 'xiaoxiao@wehelp.com',
+    signature: '付小小就是付小小',
+    title: '社区志愿者',
+    group: '文艺剧社',
+    tags: [
+      {
+        key: '0',
+        label: '女汉子',
+      },
+      {
+        key: '1',
+        label: '知前后五百年但是不知氦氖氩',
+      },
+      {
+        key: '3',
+        label: '我爱学习天天向上',
+      },
+    ],
+    notifyCount: 12,
+    unreadCount: 11,
+    country: '中国',
+    geographic: {
+      province: {
+        label: '杭州',
+        key: '50120',
+      },
+      city: {
+        label: '杭州',
+        key: '901318',
+      },
+    },
+    address: '雷锋晚照巷',
+    phone: '021-80881240',
+  },
 ];
 
-export {
-  mock_users_info as FakeUsersInfo, 
-  mock_users_detail as FakeUsersDetail
-};
+export { mock_users_info as FakeUsersInfo, mock_users_detail as FakeUsersDetail };
