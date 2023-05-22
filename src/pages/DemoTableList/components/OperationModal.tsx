@@ -70,15 +70,15 @@ const OperationModal: FC<OperationModalProps> = (props) => {
             options={[
               {
                 label: '梅西',
-                value: 'meixi',
+                value: '梅西',
               },
               {
                 label: '王彦哲',
-                value: 'yanzhe',
+                value: '王彦哲',
               },
               {
                 label: '付小小',
-                value: 'xiaoxiao',
+                value: '付小小',
               },
             ]}
             placeholder="请选择管理员"
