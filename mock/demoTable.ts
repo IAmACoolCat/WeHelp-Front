@@ -32,9 +32,9 @@ const covers = [
 const desc = [
   '任务1：完成80以上老人的信息统计调查',
   '任务2：小区流浪猫信息数据统计',
-  '任务3：生命就像一盒巧克力，结果往往出人意料',
-  '任务4：城镇中有那么多的酒馆，她却偏偏走进了我的酒馆',
-  '任务5：那时候我只会想自己想要什么，从不想自己拥有什么',
+  '任务3：电梯安装同意率统计',
+  '任务4：帮助9-101张老师配药',
+  '任务5：筹备暑托班',
   '任务6：那时候我只会想自己想要什么，从不想自己拥有什么',
   '任务7：那时候我只会想自己想要什么，从不想自己拥有什么',
   '任务8：那时候我只会想自己想要什么，从不想自己拥有什么',
@@ -66,24 +66,37 @@ const usernames = [
   'xiaoxiao',
 ];
 
-function fakeList(count: number, status: string, username: string): BasicListItemDataType[] {
-  console.log('fakeList ' + count + ', ' + status + ',' + username);
+const publishers = [
+  'zhang',
+  'li',
+  'zhang',
+  'wang',
+  'wang',
+  'li',
+  'zhang',
+  'zhang',
+  'li',
+  'li',
+];
+
+function fakeList(count: number, status: string, username: string, by: string): BasicListItemDataType[] {
+  console.log('fakeList ' + count + ', ' + status + ',' + username +', by:' + by);
   const list = [];
   for (let i = 0; i < count; i += 1) {
     console.log(">>" + user[i]);
-    if(username === 'yanzhe' || usernames[i] === username) {
+    let filter: string = usernames[i];
+    if(by === 'publisher') {
+      filter = publishers[i];
+    }
+    if(username === 'yanzhe' || filter === username) {
       console.log("insert task.");
     list.push({
       id: `fake-list-${i}`,
       owner: user[i],
+      publisher: publishers[i],
       title: titles[i],
       avatar: avatars[i],
       cover: parseInt(`${i / 4}`, 10) % 2 === 0 ? covers[i % 4] : covers[3 - (i % 4)],
-      // status: ['done', 'exception', 'wip'][i % 3] as
-      //   | 'done'
-      //   | 'exception'
-      //   | 'wip'
-      //   | 'success',
       status: statuses[i],
       percent: percents[i], // Math.ceil(Math.random() * 50) + 50,
       logo: avatars[i % 8],
@@ -131,7 +144,7 @@ function fakeList(count: number, status: string, username: string): BasicListIte
 
 let sourceData: BasicListItemDataType[] = [];
 
-function getFakeList(req: Request, res: Response) {
+function getMyList(req: Request, res: Response) {
   console.log('getFakeList');
   const params = req.query as any;
   const count = Number(params.count) * 1 || 20;
@@ -139,6 +152,31 @@ function getFakeList(req: Request, res: Response) {
   const username = params?.username || 'yanzhe';
   console.log('getFakeList ' + count + ', ' + status + ',' + username);
   let result = fakeList(count, status, username);
+  sourceData = result;
+  // if(username === 'yanzhe') {
+  //   // do nothing
+  // } else {
+  //   result = result.filter((item) => item.owner === username);
+  // }
+  // console.log(result);
+  res.send({
+    code: 200,
+    data: { list: result },
+  });  
+}
+
+function getFakeList(req: Request, res: Response) {
+  console.log('getFakeList');
+  const params = req.query as any;
+  const count = Number(params.count) * 1 || 20;
+  const status = params?.status || 'all';
+  const username = params?.username || 'yanzhe';
+  console.log('getFakeList ' + count + ', ' + status + ',' + username);
+  let by: string = "";
+  if(username === 'zhang') {
+    by = "publisher";
+  }
+  let result = fakeList(count, status, username, by);
   sourceData = result;
   // if(username === 'yanzhe') {
   //   // do nothing
@@ -194,4 +232,5 @@ function postFakeList(req: Request, res: Response) {
 export default {
   'GET  /api/get_list': getFakeList,
   'POST  /api/post_fake_list': postFakeList,
+  'GET /api/get_my_list': getMyList,
 };

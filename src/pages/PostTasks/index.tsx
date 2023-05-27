@@ -59,6 +59,7 @@ const ListContent = ({
       <span>发布者</span>
       <p>{publisher}</p>
     </div>
+
     <div className={styles.listContentItem}>
       <span>开始时间</span>
       <p>{moment(createdAt).format('YYYY-MM-DD HH:mm')}</p>
@@ -74,8 +75,6 @@ export const BasicList: FC = () => {
   const [done, setDone] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(false);
   const [current, setCurrent] = useState<Partial<BasicListItemDataType> | undefined>(undefined);
-
-  const pendingTasks = 1;
 
   /*
    * useRequest是umi提供的一个强大的管理异步数据请求的hook
@@ -202,13 +201,10 @@ export const BasicList: FC = () => {
           <Card bordered={false}>
             <Row>
               <Col sm={8} xs={24}>
-                <Info title="我的待办" value="1个任务" bordered />
+                <Info title="我的发办" value="4个任务" bordered />
               </Col>
               <Col sm={8} xs={24}>
-                <Info title="本周任务平均处理时间" value={initialState?.currentUser?.averageTaskTime} bordered />
-              </Col>
-              <Col sm={8} xs={24}>
-                <Info title="本周完成任务数" value={initialState?.currentUser?.weekTasks} />
+                <Info title="已完成任务数" value={initialState?.currentUser?.weekTasks} />
               </Col>
             </Row>
           </Card>

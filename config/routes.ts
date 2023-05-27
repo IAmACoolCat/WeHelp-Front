@@ -23,8 +23,17 @@
     path: '/demotable',
     name: '任务列表',
     icon: 'TableOutlined',
+    access: 'canTaskList',
     component: './DemoTableList',
   },
+  {
+    path: '/posttask',
+    name: '任务发布',
+    icon: 'TableOutlined',
+    access: 'canResident',
+    component: './PostTasks',
+  },
+
   {
     path: '/admin',
     name: '管理员',
@@ -33,7 +42,7 @@
     routes: [
       {
         path: '/admin/sub-page',
-        name: 'sub-page',
+        name: '管理页面',
         icon: 'smile',
         component: './Welcome',
       },
@@ -42,12 +51,12 @@
       },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: 'list.table-list',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './TableList',
+  // },
   {
     name: '系统管理',
     icon: 'user',

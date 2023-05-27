@@ -13,15 +13,22 @@ const mock_users_info = [
   {
     username: 'meixi',
     userid: '2',
-    access: 'user',
+    access: 'volunteer',
     password: '123456',
   },
   {
     username: 'xiaoxiao',
     userid: '3',
-    access: 'user',
+    access: 'resident',
     password: '123456',
   },
+  {
+    username: 'zhang',
+    userid: '4',
+    access: 'resident',
+    password: '123456',
+  },
+
 ];
 
 /**
@@ -31,6 +38,7 @@ const mock_users_detail = [
   {
     username: 'yanzhe',
     userid: '1',
+    access: 'admin',
 
     name: '王彦哲',
     avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
@@ -67,10 +75,13 @@ const mock_users_detail = [
     },
     address: '文馨雅苑 77 号',
     phone: '021-80881240',
+    weekTasks: '1个任务',
+    averageTaskTime: '32分钟',
   },
   {
     username: 'meixi',
     name: '梅西',
+    access: 'volunteer',
     avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
     userid: '2',
     email: 'meixi@wehelp.com',
@@ -106,10 +117,13 @@ const mock_users_detail = [
     },
     address: '日不落大道 77 号',
     phone: '021-80881240',
+    weekTasks: '1个任务',
+    averageTaskTime: '28分钟',
   },
   {
     username: 'xiaoxiao',
     name: '付小小',
+    access: 'volunteer',
     avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
     userid: '3',
     email: 'xiaoxiao@wehelp.com',
@@ -145,6 +159,45 @@ const mock_users_detail = [
     },
     address: '雷锋晚照巷',
     phone: '021-80881240',
+    weekTasks: '1个任务',
+    averageTaskTime: '40分钟',
+  },
+  {
+    username: 'zhang',
+    name: '张老师',
+    access: 'resident',
+    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+    userid: '4',
+    email: 'zhang@wehelp.com',
+    signature: '退而不休',
+    title: '退休教师',
+    group: '老年活动室',
+    tags: [
+      {
+        key: '0',
+        label: '退而不休',
+      },
+      {
+        key: '1',
+        label: '发挥余热',
+      },
+    ],
+    notifyCount: 12,
+    unreadCount: 11,
+    country: '中国',
+    geographic: {
+      province: {
+        label: '上海',
+        key: '50120',
+      },
+      city: {
+        label: '浦东',
+        key: '901318',
+      },
+    },
+    address: '人民路112号',
+    phone: '021-80881240',
+    weekTasks: '2个任务',
   },
 ];
 

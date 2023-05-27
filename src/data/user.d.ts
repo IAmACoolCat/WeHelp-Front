@@ -88,6 +88,8 @@ declare namespace WeHelp {
     };
     address?: string;
     phone?: string;
+    averageTaskTime?: string;
+    weekTasks?: string;
   };
 
   type LoginResult = {

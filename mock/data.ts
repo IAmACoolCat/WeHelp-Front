@@ -7,6 +7,7 @@ export type Member = {
 export type BasicListItemDataType = {
   id: string;
   owner: string;
+  publisher: string;
   title: string;
   avatar: string;
   cover: string;
