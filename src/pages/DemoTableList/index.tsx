@@ -75,8 +75,6 @@ export const BasicList: FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [current, setCurrent] = useState<Partial<BasicListItemDataType> | undefined>(undefined);
 
-  const pendingTasks = 1;
-
   /*
    * useRequest是umi提供的一个强大的管理异步数据请求的hook
    */

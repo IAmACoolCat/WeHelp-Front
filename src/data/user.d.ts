@@ -155,8 +155,13 @@ declare namespace WeHelp {
 
   type  NoticeIconItemType = 'notification' | 'message' | 'event';
 
+  type NoticeFilter = {
+    owner?: string;
+  };
+
   type NoticeIconItem = {
     id?: string;
+    owner?: string;
     extra?: string;
     key?: string;
     read?: boolean;

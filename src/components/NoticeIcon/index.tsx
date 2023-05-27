@@ -73,7 +73,12 @@ const NoticeIconView: React.FC = () => {
   const { initialState } = useModel('@@initialState');
   const { currentUser } = initialState || {};
   const [notices, setNotices] = useState<WeHelp.NoticeIconItem[]>([]);
-  const { data } = useRequest(getNotices);
+  const { data 
+  } = useRequest(()=> {
+    return getNotices({
+      owner: initialState?.currentUser?.username
+    });
+  });
 
   useEffect(() => {
     setNotices(data || []);

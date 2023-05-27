@@ -60,8 +60,8 @@ const mock_users_detail = [
         label: '梅西粉',
       },
     ],
-    notifyCount: 12,
-    unreadCount: 11,
+    notifyCount: 6,
+    unreadCount: 6,
     country: 'China',
     geographic: {
       province: {
@@ -102,8 +102,8 @@ const mock_users_detail = [
         label: 'I love China',
       },
     ],
-    notifyCount: 12,
-    unreadCount: 11,
+    notifyCount: 5,
+    unreadCount: 5,
     country: '阿根廷',
     geographic: {
       province: {
@@ -144,8 +144,8 @@ const mock_users_detail = [
         label: '我爱学习天天向上',
       },
     ],
-    notifyCount: 12,
-    unreadCount: 11,
+    notifyCount: 4,
+    unreadCount: 4,
     country: '中国',
     geographic: {
       province: {
@@ -182,8 +182,8 @@ const mock_users_detail = [
         label: '发挥余热',
       },
     ],
-    notifyCount: 12,
-    unreadCount: 11,
+    notifyCount: 4,
+    unreadCount: 4,
     country: '中国',
     geographic: {
       province: {

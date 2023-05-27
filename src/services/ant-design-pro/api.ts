@@ -33,12 +33,23 @@ export async function login(body: WeHelp.LoginParams, options?: { [key: string]:
 }
 
 /** 此处后端没有提供注释 GET /api/notices */
-export async function getNotices(options?: { [key: string]: any }) {
+// export async function getNotices(options?: { [key: string]: any }) {
+//   return request<WeHelp.NoticeIconList>('/api/notices', {
+//     method: 'GET',
+//     ...(options || {}),
+//   });
+// }
+
+export async function getNotices(
+  params: WeHelp.NoticeFilter
+  ) {
+  console.log(">>>" + params.owner);
   return request<WeHelp.NoticeIconList>('/api/notices', {
     method: 'GET',
-    ...(options || {}),
+    params
   });
 }
+
 
 /** 获取规则列表 GET /api/rule */
 export async function rule(
